@@ -7,8 +7,10 @@
 #include "Components/StaticMeshComponent.h"
 #include "TankAimingComponent.generated.h"
 
-class UTankBarrel; //foward declaration
+//foward declaration
+class UTankBarrel; 
 
+//Holds parameters for aiming
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class BATTLETANK_API UTankAimingComponent : public UActorComponent
 {
