@@ -30,6 +30,8 @@ public:
 
 	void MoveBarrel(FVector AimDirection);
 
+	void MoveTurret(FVector AimDirection);
+
 	void AimAt(FVector HitLocation, float LaunchSpeed);
 
 protected:
