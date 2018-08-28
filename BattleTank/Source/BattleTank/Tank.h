@@ -38,6 +38,8 @@ protected:
 
 	UTankAimingComponent* TankAimingComponent = nullptr;
 
+	
+
 private:	
 	
 	// Called to bind functionality to input
