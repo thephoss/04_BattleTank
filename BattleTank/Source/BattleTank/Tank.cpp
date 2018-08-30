@@ -26,16 +26,17 @@ void ATank::AimAt(FVector HitLocation)
 
 void ATank::Fire()
 {
-	
-	if (!Barrel)
+	bool isReloaded = (FPlatformTime::Seconds() - LastFireTime) > ReloadTimeSeconds;
+	if (Barrel && isReloaded)
 	{
-		return;
-	}
-
-	//spawn projectile
+		//spawn projectile
 	auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("Projectile")), Barrel->GetSocketRotation(FName("Projectile")));
 	
 	Projectile->Launch(LaunchSpeed);
+	LastFireTime = FPlatformTime::Seconds();
+	}
+
+	
 }
 
 void ATank::SetBarrelReference(UTankBarrel * BarrelToSet)
